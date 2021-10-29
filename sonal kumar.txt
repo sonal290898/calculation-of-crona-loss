@@ -1,0 +1,14 @@
+clc
+clear all
+d=input('enter the diameter in cm');
+r=d/2;
+d=input('enter the distance between phase and neutral');
+f=input('enter th frequency');
+v=input('enter the operational voltage');
+g0=input('enter the value of potencial gradiant');
+m0=input('enter the value of surface inten factor');
+delta=input('enter the value of air density factor');
+vc=m0*delta*g0*r*log(d/r)
+fprint('\n vc=%f kv/phase\n')
+pcronaloss=24.2*(f+25/delta)*(r/d)^(1/2)*(v-vc)^(2)*10^(-5);
+fprint('\n pcronaloss=%f kw/ph/km')
